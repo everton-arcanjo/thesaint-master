@@ -15,7 +15,7 @@ class AdicionandoColunaFkPedido extends Migration
     {
         Schema::table('pedido_produto', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('ppr_ped_id')->after('ppr_mol_id');
+            $table->unsignedBigInteger('ppr_ped_id')->after('ppr_id');
             $table->foreign('ppr_ped_id')->references('ped_id')->on('pedido');
 
         });

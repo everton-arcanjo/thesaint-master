@@ -18,8 +18,8 @@ class MateriaPrimaController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth');
-       //$this->middleware('can:administrador_producao');
+        $this->middleware('auth');
+       $this->middleware('can:administrador_producao');
     }
 
     public function index()

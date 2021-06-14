@@ -49,7 +49,7 @@ class MetaController extends Controller
 
     public function create()
     {
-        $listaVendedor = Usuario::where('usu_dep_id','=',3)->get();
+        $listaVendedor = Usuario::where('cli_dep_id','=',3)->get();
 
         return view('meta.novo',compact('listaVendedor'));
 
@@ -88,7 +88,7 @@ class MetaController extends Controller
 
     public function edit($id)
     {
-        $listaVendedor = Usuario::where('usu_dep_id','=',3)->get();
+        $listaVendedor = Usuario::where('cli_dep_id','=',3)->get();
         $objMeta = MetaVendedor::findOrFail($id);
         return view('meta.editar',compact('listaVendedor','objMeta'));
     }

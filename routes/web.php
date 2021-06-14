@@ -143,6 +143,7 @@ Route::prefix('meta')->group(function(){
 });
 
 Route::prefix('estoqueproduto')->group(function(){
+    Route::resource('/','EstoqueController');
     Route::get('/indexproduto','EstoqueController@indexproduto');
     Route::get('/editproduto/{id}','EstoqueController@editproduto')->where('id','[0-9]+');
     Route::post('/updateestoque/{id}','EstoqueController@updateestoque')->where('id','[0-9]+');

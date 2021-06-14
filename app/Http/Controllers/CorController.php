@@ -20,6 +20,7 @@ class CorController extends Controller
     public function index()
     {
         $cor = \Request::input('cor');
+        $codigo_cor = \Request::input('codigo_cor');
         $filtro = [];
 
         if(is_null($cor) || empty($cor)){
@@ -29,7 +30,9 @@ class CorController extends Controller
         }else{
 
             $filtro = ['cor' => $cor];
-            $listaCor = Cor::where('cor_cor', 'LIKE',"%".$cor."%")->paginate(10);
+            $filtro = ['codigo_cor' => $codigo_cor];
+            $listaCor = Cor::where('cor_cor', 'LIKE',"%".$cor."%")->
+            where('codigo_cor', 'LIKE',"%".$codigo_cor."%")->paginate(10);
         }
 
         return view('cor.index',compact('listaCor','filtro'));
@@ -44,11 +47,13 @@ class CorController extends Controller
     public function store(Request $request)
     {
         $cor = $request->input("cor");
+        $codigo_cor = $request->input("codigo_cor");
 
-        $request->validate(['cor' => 'unique:cor,cor_cor'],['unique' => 'Cor já cadastrada.']);
+        $request->validate(['cor' => 'unique:cor,cor_cor', 'codigo_cor' => 'unique:cor,codigo_cor'],['unique' => 'Cor já cadastrada.']);
 
         $objCor = new Cor();
         $objCor->cor_cor = $cor;
+        $objCor->codigo_cor = $codigo_cor;
         $objCor->save();
 
         return redirect('/cor');
@@ -77,6 +82,7 @@ class CorController extends Controller
     public function update(Request $request, $id)
     {
         $cor = $request->input("cor");
+        $codigo_cor = $request->input("codigo_cor");
         $objCor = Cor::findOrFail($id);
 
         \Validator::make(['cor_cor' => $cor],[
@@ -86,9 +92,17 @@ class CorController extends Controller
             ['unique' => 'Cor já cadastrada.']
         )->validate();
 
+        \Validator::make(['codigo_cor' => $codigo_cor],[
+            'codigo_cor' =>[
+                Rule::unique('cor')->whereNull('deleted_at')->ignore($objCor->cor_id,'cor_id')],
+            ],
+            ['unique' => 'Codigo já cadastrado.']
+        )->validate();        
+
         if( is_object( $objCor ) ){
 
              $objCor->cor_cor = $cor;
+             $objCor->codigo_cor = $codigo_cor;
              $objCor->save();
 
          }

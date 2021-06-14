@@ -52,7 +52,7 @@ class UsuarioController extends Controller
 
             if(isset($filtro['departamento']) && !empty($filtro['departamento'])){
 
-                $listaUsuario->where('usu_dep_id', '=',$filtro['departamento']);
+                $listaUsuario->where('cli_dep_id', '=',$filtro['departamento']);
 
              }
 
@@ -96,7 +96,7 @@ class UsuarioController extends Controller
         $objUsuario->usu_email = $usuario['email'];
         $objUsuario->usu_login = $usuario['login'];
         $objUsuario->usu_senha = Hash::make($usuario['senha']);
-        $objUsuario->usu_dep_id = $usuario['departamento'];
+        $objUsuario->cli_dep_id = $usuario['departamento'];
         $objUsuario->save();
 
         return redirect('/usuario');
@@ -144,7 +144,7 @@ class UsuarioController extends Controller
         $objUsuario->usu_celular = $usuario['celular'];
         $objUsuario->usu_email = $usuario['email'];
         $objUsuario->usu_login = $usuario['login'];
-        $objUsuario->usu_dep_id = $usuario['departamento'];
+        $objUsuario->cli_dep_id = $usuario['departamento'];
 
         if( !empty($usuario['senha']) ){
 

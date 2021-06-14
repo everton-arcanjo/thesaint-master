@@ -231,6 +231,7 @@ function validaAbaPedido()
     }else{
 
         $("#cliente-tab").removeClass('disabled');
+        alert('Falta pouco, acesse a aba de clientes antes de salvar!');
 
     }
 }
@@ -257,12 +258,19 @@ function validaAbaCliente()
     }else{
 
         $("#produto-tab").removeClass('disabled');
+        alert('Acesse a aba de produtos, antes de salvar!');
 
     }
 }
 
 function validaAbaPedidoGeral()
-{
+{console.log('aaaa');
     validaAbaPedido();
+    //validaAbaCliente();
+}
+
+function validaAbaClienteGeral()
+{
     validaAbaCliente();
+    //validaAbaCliente();
 }

@@ -18,7 +18,7 @@ class CriandoTabelaClienteEndereco extends Migration
             $table->engine = "innoDB";
 
             $table->bigIncrements('cen_id');
-            $table->integer('cen_cep');
+            $table->string('cen_cep', 25);
             $table->string('cen_endereco',80);
             $table->integer('cen_numero');
             $table->string('cen_complemento',20)->nullable();

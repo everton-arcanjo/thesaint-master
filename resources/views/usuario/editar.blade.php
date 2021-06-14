@@ -37,7 +37,7 @@
                         <select  class="form-control" name="usuario[departamento]" id="usuarioDepartamento" required="required">
                             <option value="">Selecione</option>
                             @foreach ($listaDepartamento as $departamento)
-                                <option @if($departamento->dep_id == $objUsuario->usu_dep_id) selected="selected" @endif value="{{$departamento->dep_id}}">{{$departamento->dep_nome}}</option>
+                                <option @if($departamento->dep_id == $objUsuario->cli_dep_id) selected="selected" @endif value="{{$departamento->dep_id}}">{{$departamento->dep_nome}}</option>
                             @endforeach
                         </select>
                     </div>

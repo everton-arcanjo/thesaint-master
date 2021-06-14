@@ -23,12 +23,12 @@ class PrincipalController extends Controller
         $dadosPlotarGrafico = [];
         $vendaGrafico = [];
 
-        if(Auth::user()->usu_dep_id == "1"){
+        if(Auth::user()->cli_dep_id == "1"){
 
             $venda = Pedido::join('usuario','pedido.ped_usu_id','=','usuario.usu_id')
                 ->join('pedido_produto','pedido.ped_id','=','pedido_produto.ppr_ped_id')
                 ->whereRaw("CONCAT(LPAD(MONTH(pedido.ped_data_pedido),2,'0'),YEAR(pedido.ped_data_pedido)) = ?", date("mY"))
-                ->where('usuario.usu_dep_id','=','3')
+                ->where('usuario.cli_dep_id','=','3')
                 ->where('pedido_produto.deleted_at','!=',null)
                 ->select('usuario.usu_nome',DB::Raw('SUM(pedido_produto.ppr_valor_unitario) as total'))
                 ->groupBy('usuario.usu_nome')
@@ -57,7 +57,7 @@ class PrincipalController extends Controller
 
         $valorFafurado = 0.00;
         $metaVendedorLogado = 0.00;
-
+        $lava = null;
         $totalPedidoAprovado =  Pedido::where('ped_status_aprovacao','=','AP')
             ->whereRaw("CONCAT(LPAD(MONTH(ped_data_pedido),2,'0'),YEAR(ped_data_pedido)) = ?", date("mY"))
             ->count();
@@ -78,7 +78,7 @@ class PrincipalController extends Controller
                 $valorFafurado = exibeTotalVenda($valor->pedidoproduto);
             }
 
-            if(Auth::user()->usu_dep_id == "3"){
+            if(Auth::user()->cli_dep_id == "4"){
 
                 $vendedorVenda = [];
                 $vendaGrafico = [];

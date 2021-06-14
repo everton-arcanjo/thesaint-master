@@ -15,7 +15,7 @@ class AdicionarNovaFkTabelaProdutoPedido extends Migration
     {
         Schema::table('pedido_produto', function (Blueprint $table) {
             $table->unsignedBigInteger('ppr_pca_id')->after('ppr_ped_id');
-            $table->foreign('ppr_pca_id')->references('produto_caracteristica')->on('pca_id');
+            $table->foreign('ppr_pca_id')->references('pca_id')->on('produto_caracteristica');
         });
     }
 

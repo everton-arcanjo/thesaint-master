@@ -116,7 +116,7 @@ if( !function_exists('menu') )
         $authUsuario = \Auth::user();
         return Menu::with('departamento')->whereHas('departamento',function($query) use ($authUsuario){
 
-            $query->where('dep_id','=',$authUsuario->usu_dep_id);
+            $query->where('dep_id','=',$authUsuario->cli_dep_id);
 
         })->where('mnu_ordem',"!=","")
             ->orderBy('mnu_ordem','asc')->get();
@@ -170,7 +170,7 @@ if( !function_exists('exibeTotalVenda') )
             $valorTotal+=$venda->ppr_qtd_p * $venda->ppr_valor_unitario;
             $valorTotal+=$venda->ppr_qtd_m * $venda->ppr_valor_unitario;
             $valorTotal+=$venda->ppr_qtd_g * $venda->ppr_valor_unitario;
-            $valorTotal+=$venda->ppr_qtd_g * $venda->ppr_valor_unitario;
+            $valorTotal+=$venda->ppr_qtd_gg * $venda->ppr_valor_unitario;
 
         }
         return number_format($valorTotal,2,",",".");

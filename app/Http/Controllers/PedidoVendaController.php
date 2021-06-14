@@ -32,7 +32,7 @@ class PedidoVendaController extends Controller
 
             $filtro = [];
 
-            if(Auth::user()->usu_dep_id == 3){
+            if(Auth::user()->cli_dep_id == 4){
 
                 $listaPedido = Pedido::where('ped_usu_id','=',Auth::user()->usu_id)->paginate(10);
 
@@ -123,7 +123,7 @@ class PedidoVendaController extends Controller
         $listaProdutoPedido = [];
 
 
-        if( count($produto) > 0 ){
+        if( isset($produto) && count($produto) > 0 ){
 
             foreach ($produto as $chaveProduto => $valorProduto) {
 

@@ -16,11 +16,11 @@ class CriarTabelaProdutofinalMateriaprima extends Migration
         Schema::create('produtofinal_materiaprima', function (Blueprint $table) {
 
             $table->bigIncrements('pmp_id');
-            $table->unsignedInteger('pmp_pfi_id');
-            $table->unsignedInteger('pmp_mpr_id');
+            $table->unsignedBigInteger('pmp_pfi_id');
+            $table->unsignedBigInteger('pmp_mpr_id');
             $table->unsignedMediumInteger('pmp_peso');
-            $table->foreign('pmp_pfi_id')->references('produtofinal')->on('pfi_id');
-            $table->foreign('pmp_mpr_id')->references('materia_prima')->on('mpr_id');
+            $table->foreign('pmp_pfi_id')->references('pfi_id')->on('produtofinal');
+            $table->foreign('pmp_mpr_id')->references('mpr_id')->on('materia_prima');
             $table->softDeletes();
             $table->timestamps();
         });

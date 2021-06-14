@@ -50,7 +50,7 @@
                                 @forelse ($listaCor as $chave => $cor)
                                     <tr role="row"  @if($chave%2 == '0') class="odd" @else class="even" @endif style="color: #000">
                                         <td class="table-plus sorting_1" tabindex="0">
-                                            {{$cor->cor_cor}}
+                                            {{$cor->cor_cor}} - {{$cor->codigo_cor}}
                                         </td>
                                         <td>
                                             <div class="dropdown">

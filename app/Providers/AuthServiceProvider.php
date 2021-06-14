@@ -34,32 +34,32 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('administrador_vendedor_producao', function($user){
-            return $user->usu_dep_id == "1" || $user->usu_dep_id == "2" || $user->usu_dep_id == "3";
+            return $user->cli_dep_id == "1" || $user->cli_dep_id == "2" || $user->cli_dep_id == "3";
         });
 
         Gate::define('vendedor_administrador', function($user){
-            return $user->usu_dep_id == "1" || $user->usu_dep_id == "3";
+            return $user->cli_dep_id == "1" || $user->cli_dep_id == "3" || $user->cli_dep_id == "4";
         });
 
         Gate::define('administrador_producao', function($user){
-            return $user->usu_dep_id == "1" || $user->usu_dep_id == "2";
+            return $user->cli_dep_id == "1" || $user->cli_dep_id == "2" || $user->cli_dep_id == "3" || $user->cli_dep_id == "4";
         });
 
         Gate::define('vendedor', function($user){
-            return $user->usu_dep_id == "3";
+            return $user->cli_dep_id == "4";
         });
 
         Gate::define('administrador', function($user){
-            return $user->usu_dep_id == "1";
+            return $user->cli_dep_id == "1";
         });
 
         Gate::define('producao', function($user){
-            return $user->usu_dep_id == "2";
+            return $user->cli_dep_id == "2";
         });
 
         Gate::define('permite_cliente',function($user, $cliente){
 
-            if( in_array($user->usu_dep_id,[1,2]) ){
+            if( in_array($user->cli_dep_id,[1,2]) ){
 
                 return true;
 
@@ -81,7 +81,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('permite_pedido',function($user,$pedido){
 
-            if( in_array($user->usu_dep_id,[1,2]) ){
+            if( in_array($user->cli_dep_id,[1,2]) ){
 
                 return true;
 

@@ -19,6 +19,7 @@ class CreateCorTable extends Migration
 
             $table->bigIncrements('cor_id');
             $table->string('cor_cor',30);
+            $table->string('codigo_cor',30)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -73,7 +73,7 @@
 <div class="pd-10 bg-white border-radius-4 box-shadow mb-10">
     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
         <div class="col-sm-12">
-            @if(Auth::user()->usu_dep_id == "1")
+            @if(Auth::user()->cli_dep_id == "1")
                 <div class="row" id="acaoAprovar" style="display: none;">
                     <div class="col-sm-1" style="margin-right: 1%">
                         <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Aprovar" onclick="aprovarRecusar('S')">
@@ -93,7 +93,7 @@
                 <thead>
                     <tr role="row">
                         <th class="table-plus" tabindex="0"  rowspan="1" colspan="1">
-                            @if(Auth::user()->usu_dep_id == "1")
+                            @if(Auth::user()->cli_dep_id == "1")
                                 <input type="checkbox"  class="check-input" id="selecaoPrincipal" value="S"/>
                             @endif
                         </th>
@@ -113,7 +113,7 @@
                         <tr role="row"  @if($chave%2 == '0') class="odd" @else class="even" @endif style="color: #000">
 
                             <td class="table-plus sorting_1" tabindex="0">
-                                @if($pedido->ped_status_aprovacao == 'AG' && Auth::user()->usu_dep_id == "1")
+                                @if($pedido->ped_status_aprovacao == 'AG' && Auth::user()->cli_dep_id == "1")
                                     <input type="checkbox" class="check-input" onclick="selecaoUnica(event)" id="pedidoSelecao{{$pedido->ped_id}}" name="pedidoSelecao[{{$pedido->ped_id}}]" value="{{$pedido->ped_id}}"/>
                                 @endif
                             </td>

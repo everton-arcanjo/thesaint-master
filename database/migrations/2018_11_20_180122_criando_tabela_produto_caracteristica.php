@@ -15,13 +15,13 @@ class CriandoTabelaProdutoCaracteristica extends Migration
     {
         Schema::create('produto_caracteristica', function (Blueprint $table) {
             $table->bigIncrements('pca_id');
-            $table->string('pca_codigo',10);
-            $table->string('pca_molde',10);
-            $table->string('pca_familia',15)->nullable();
-            $table->string('pca_tecido',15);
+            $table->string('pca_codigo',45);
+            $table->string('pca_molde',45);
+            $table->string('pca_familia',45)->nullable();
+            $table->string('pca_tecido',45);
             $table->double('pca_valor', 15, 2);
             $table->unsignedBigInteger('pca_pro_id');
-            $table->foreign('pca_pro_id')->references('produto')->on('pro_id');
+            $table->foreign('pca_pro_id')->references('pro_id')->on('produto');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -40,8 +40,24 @@ class ProdutoController extends Controller
 
     public function create()
     {
+        $produto = \Request::input('produto');
         $this->middleware('auth');
-        return view('produto.novo',compact('listaMateriaPrima'));
+
+        $listaMolde = Molde::all();
+        $listaCor = Cor::all();
+        $listaTecido = Tecido::all();
+
+
+        if( empty($produto) || is_null($produto) ){
+
+            $listaProduto = Produto::paginate(10);
+
+        }else{
+
+            $listaProduto = Produto::where('pro_tipo','LIKE','%'.$produto.'%')
+                ->paginate(10);
+        }        
+        return view('produto.novo',compact('listaProduto','listaMolde','listaCor','listaTecido'));
     }
 
     public function store(Request $request)

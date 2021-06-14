@@ -44,6 +44,7 @@
                                 <th scope="col">Codigo <span style="color: red">*</span></th>
                                 <th scope="col">Molde <span style="color: red">*</span></th>
                                 <th scope="col">Consumo <span style="color: red">*</span></th>
+                                <th scope="col">Unidade <span style="color: red">*</span></th>
                                 <th scope="col">Cor <span style="color: red">*</span></th>
                                 <th scope="col">Tecido <span style="color: red">*</span></th>
                                 <th scope="col">Valor <span style="color: red">*</span></th>

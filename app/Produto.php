@@ -27,6 +27,7 @@ class Produto extends Model
             $detalheTratado = [];
 
             $linha = 0;
+            $manterRegistro = [];
 
             $detalheTratado = organizaArray($detalhes);
 
@@ -102,7 +103,7 @@ class Produto extends Model
                     }
 
                 }
-                if( count($manterRegistro) > 0 ){
+                if(isset($manterRegistro) && count($manterRegistro) > 0 ){
 
                     ProdutoCaracteristica::whereNotIn('pca_id',$manterRegistro)
                     ->where('pca_pro_id','=',$id)

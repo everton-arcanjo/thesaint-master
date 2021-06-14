@@ -33,6 +33,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Codigo Cor</label> <span style="color: red">*</span>
+                        <input class="form-control"  maxlength="30" type="numeric" name="codigo_cor" id="codigo_cor" value="{{$objCor->codigo_cor}}" placeholder="Codigo Cor" required="required">
+                    </div>                    
+
+                    <div class="form-group">
                         <button type="button" class="btn btn-outline-dark btn-sm" onclick="voltar('/cor')">Voltar</button>
                         <button type="submit" class="btn btn-dark btn-sm">Salvar</button>
                     </div>

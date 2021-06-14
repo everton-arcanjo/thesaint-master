@@ -28,7 +28,7 @@ class ClienteController extends Controller
 
             $filtro = [];
 
-            if(Auth::user()->usu_dep_id == 3){
+            if(Auth::user()->cli_dep_id == 4){
 
                 $listaCliente = Cliente::where('cli_usu_id','=',Auth::user()->usu_id)->paginate(10);
 
@@ -42,7 +42,7 @@ class ClienteController extends Controller
 
             $listaCliente = Cliente::where('cli_cnpj','LIKE','%'.$filtro['cnpj'].'%');
 
-            if(Auth::user()->usu_dep_id == 3){
+            if(Auth::user()->cli_dep_id == 4){
 
                 $listaCliente->where('cli_usu_id', '=',Auth::user()->usu_id);
 

@@ -18,14 +18,15 @@ class UsuarioTabela extends Migration
             $table->engine = "innoDB";
 
             $table->bigIncrements('usu_id');
-            $table->string('cli_nome',50);
-            $table->string('cli_cpf',15);
-            $table->string('cli_matricula',50)->nullable();
-            $table->string('cli_telefone',25);
-            $table->string('cli_email',255)->nullable();
-            $table->string('cli_login',25);
-            $table->string('cli_senha',25);
-            $table->date('cli_data_nascimento')->nullable();
+            $table->string('usu_nome',50);
+            $table->string('usu_cpf',15)->nullable();
+            $table->string('usu_matricula',50)->nullable();
+            $table->string('usu_telefone',25)->nullable();
+            $table->string('usu_celular',25)->nullable();
+            $table->string('usu_email',255)->nullable();
+            $table->string('usu_login',25);
+            $table->string('usu_senha',25);
+            $table->date('usu_data_nascimento')->nullable();
             $table->unsignedBigInteger('cli_dep_id');
             $table->softDeletes();
             $table->timestamps();

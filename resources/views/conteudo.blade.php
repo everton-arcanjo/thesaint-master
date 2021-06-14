@@ -2,7 +2,7 @@
 @section('conteudo')
 
 <div class="pd-ltr-20 customscroll customscroll-10-p height-100-p xs-pd-20-10 mCustomScrollbar _mCS_3 mCS-autoHide" style="position: relative; overflow: visible;"><div id="mCSB_3" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0" style="max-height: none;"><div id="mCSB_3_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="ltr">
-        @if(Auth::user()->usu_dep_id == "1" || Auth::user()->usu_dep_id == "2")
+        @if(Auth::user()->cli_dep_id == "1" || Auth::user()->cli_dep_id == "2")
             <div class="row clearfix progress-box">
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
                     <div class="bg-white pd-20 box-shadow border-radius-5 height-100-p">
@@ -106,7 +106,7 @@
             </div>
         @endif
 
-        @if(Auth::user()->usu_dep_id == "1" || Auth::user()->usu_dep_id == "2")
+        @if(Auth::user()->cli_dep_id == "1" || Auth::user()->cli_dep_id == "2")
             <div class="bg-white pd-20 box-shadow border-radius-5 mb-30">
                 <h4 class="mb-30">Ranking de Vendas REF @php echo date("m/Y") @endphp</h4>
                 <div class="row">

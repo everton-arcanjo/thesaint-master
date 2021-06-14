@@ -19,11 +19,11 @@ class CreateMateriaPrimaComprasTable extends Migration
 
             $table->bigIncrements('mtc_id');
             $table->date('mtc_data');
-            $table->unsignedBigInteger('mtc_for_id');
+            $table->unsignedBigInteger('mtc_for_id')->nullable();
             $table->smallInteger('prazo');
             $table->date('mtc_data_previsao');
             $table->unsignedBigInteger('mtc_mpr_id');
-            $table->foreign('mtc_mpr_id')->references('materia_prima')->on('mpr_id');
+            $table->foreign('mtc_mpr_id')->references('mpr_id')->on('materia_prima');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -18,10 +18,10 @@ class CriandoTabelaCliente extends Migration
             $table->engine = "innoDB";
 
             $table->bigIncrements('cli_id');
-            $table->string('cli_cnpj',14);
+            $table->string('cli_cnpj',25);
             $table->string('cli_razao_social',50);
             $table->string('cli_nome_fantasia',50)->nullable();
-            $table->string('cli_inscricao_estadual',15)->nullable();
+            $table->string('cli_inscricao_estadual',25)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

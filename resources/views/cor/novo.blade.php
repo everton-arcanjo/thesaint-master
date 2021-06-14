@@ -32,6 +32,10 @@
                     <label>Cor</label> <span style="color: red">*</span>
                     <input class="form-control"  maxlength="30" type="text" name="cor" id="cor" placeholder="Cor" value="{{old('cor')}}" required="required">
                 </div>
+                <div class="form-group">
+                    <label>Codigo Cor</label> <span style="color: red">*</span>
+                    <input class="form-control"  maxlength="30" type="numeric" name="codigo_cor" id="codigo_cor" value="{{old('codigo_cor')}}" placeholder="Codigo Cor" required="required">
+                </div>                                    
 
                 <div class="form-group">
                     <button type="button" class="btn btn-outline-dark btn-sm" onclick="voltar('/cor')">Voltar</button>

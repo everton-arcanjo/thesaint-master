@@ -22,7 +22,7 @@ class Usuario extends Authenticatable
 
     public function departamento()
     {
-        return $this->hasOne('App\Departamento', 'usu_id', 'usu_dep_id');
+        return $this->hasOne('App\Departamento', 'usu_id', 'cli_dep_id');
     }
 
     public function getAuthPassword()
