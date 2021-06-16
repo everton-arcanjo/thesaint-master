@@ -13,6 +13,8 @@
         <link href="{{ asset('js/plugins/datatables/media/css/jquery.dataTables.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('js/plugins/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('js/plugins/datatables/media/css/responsive.dataTables.css') }}" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>        
 
     </head>
         <body>

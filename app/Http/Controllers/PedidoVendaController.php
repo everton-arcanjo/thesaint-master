@@ -226,7 +226,10 @@ class PedidoVendaController extends Controller
         }*/
 
         if( is_object($objPedido) ){
-            return view('pedidovenda.editar',compact('objPedido'));
+
+            $objCliente = Cliente::where('cli_id','=',$objPedido['ped_cli_id'])->first();
+            
+            return view('pedidovenda.editar',compact('objPedido', 'objCliente'));
         }
 
         return redirect('pedidovenda');

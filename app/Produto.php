@@ -95,8 +95,8 @@ class Produto extends Model
                                 $objProdutoCaracteristica->pca_valor = $valorProduto;
                                 $objProduto->caracterisrica()->save($objProdutoCaracteristica);
 
-                                $objEstoqueProduto = new EstoqueProduto();
-                                $objProdutoCaracteristica->estoque()->save($objEstoqueProduto);
+                                /*$objEstoqueProduto = new EstoqueProduto();
+                                $objProdutoCaracteristica->estoque()->save($objEstoqueProduto);*/
 
                         }
 

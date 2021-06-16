@@ -34,7 +34,7 @@
       <div class="tab-content" id="myTabContent">
             <!-- FORMULARIO DO PEDIDO -->
             <div class="tab-pane fade show active" id="pedido" role="tabpanel" aria-labelledby="pedido-tab">
-                @include('pedidovenda.abadadospedido', ['pedido' => $objPedido])
+                @include('pedidovenda.abadadospedido', ['pedido' => $objPedido, 'cliente' => $objCliente])
             </div>
             <!-- FIM FORMULARIO DO PEDIDO -->
 

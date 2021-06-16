@@ -274,3 +274,8 @@ function validaAbaClienteGeral()
     validaAbaCliente();
     //validaAbaCliente();
 }
+
+
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});

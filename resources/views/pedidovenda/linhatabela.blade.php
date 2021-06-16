@@ -1,5 +1,5 @@
 <tr role="row">
-    <td style="padding: 0px">
+    <td style="padding: 0px">        
         <input type="text" required="required" onchange="buscaInfoProduto( this )" style="width: 80px;" name="produto[codigo][]" placeholder="Codigo">
         <input type="hidden" name="produto[pca_id][]" value="">
     </td>
@@ -17,18 +17,6 @@
     </td>
     <td style="padding: 0px">
         <input required="required" onchange="somaPeca( this )" readonly="readonly" min="0" max="999" type="number" style="width: 45px;" name="produto[tamanho_pp][]" placeholder="PP" value="0">
-    </td>
-    <td style="padding: 0px">
-        <input required="required" onchange="somaPeca( this )" readonly="readonly" min="0" max="999" type="number" style="width: 45px;" name="produto[tamanho_p][]" placeholder="P" value="0">
-    </td>
-    <td style="padding: 0px">
-        <input required="required" onchange="somaPeca( this )" readonly="readonly" min="0" max="999" type="number" style="width: 45px;" name="produto[tamanho_m][]" placeholder="M" value="0">
-    </td>
-    <td style="padding: 0px">
-        <input required="required" onchange="somaPeca( this )"readonly="readonly"  min="0" max="999" type="number" style="width: 45px;" name="produto[tamanho_g][]" placeholder="G" value="0">
-    </td>
-    <td style="padding: 0px">
-        <input required="required" onchange="somaPeca( this )" readonly="readonly" min="0" max="999" type="number" style="width: 45px;" name="produto[tamanho_gg][]" placeholder="GG" value="0">
     </td>
     <td style="padding: 0px;">
         <input required="required" type="number" readonly="readonly" style="width: 50px;" name="produto[qtd_total][]" placeholder="Qtd.Total">
